@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  postgres: 
+    image: postgres:latest
+    container_name: challenge-queries-postgres
+    ports:
+      - 5432:5432
+    restart: always
+    environment:
+      POSTGRES_DB: queries_challenge
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
